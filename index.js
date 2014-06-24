@@ -89,7 +89,7 @@ module.exports = function (url, dest, opts) {
                 if (!opts.extract && opts.mode) {
                     fs.chmodSync(target, opts.mode);
                 }
-
+                stream.emit('file', url);
                 done();
             });
         });
